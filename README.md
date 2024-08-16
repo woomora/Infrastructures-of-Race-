@@ -26,7 +26,7 @@ Please cite accordingly if using any of the data:
 }
 ```
 
-If using *Pueblos de Indios* data, please cite Tanck de Estrada (2021):
+If using *Pueblos de Indios* data, please cite [Tanck de Estrada (2021)](https://repositorio.colmex.mx/concern/books/0v838347v?locale=es):
 
 ```bibtex
 @book{TanckdeEstrada2021,
