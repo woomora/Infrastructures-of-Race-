@@ -1,12 +1,14 @@
 # Infrastructures of Race? Colonial Indigenous Segregation and Contemporary Land Values
 
+![](https://github.com/woomora/Infrastructures_of_Race/blob/main/plots/nonparam_reg.png)
+
 This is the replication package for *Infrastructures of Race? Colonial Indigenous Segregation and Contemporary Land Values* by [Baldomero-Quintana, Woo-Mora, and de la Rosa-Ramos (2024)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4125065).
 
 ## Instructions
 
 To replicate the analysis in R:
 
-1. Download the data/derived files from [this link](https://www.dropbox.com/scl/fo/4t70uxctwtmz93tmt460s/AN9_tTKpmfk-yoUpik5btLg?rlkey=bmhv3d962hvcs5kulm6gk6d5l&dl=0). Add them to the master file. 
+1. Download the data files from [this link](https://www.dropbox.com/scl/fo/if8z28io6dtr6uz4ce3a6/AGTQNamHK1vuLIw_JcEs6Vo?rlkey=h1h3jj426dx83l828ci85a41s&dl=0). Add them to the master file. 
 2. Open `IoR_master_24.08.R` and run the script to reproduce each figure and table.
 
 **Notes:**  
