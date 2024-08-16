@@ -26,13 +26,13 @@ Please cite accordingly if using any of the data:
 }
 ```
 
-If using *Pueblos de Indios* data, please cite [Tanck de Estrada (2021)](https://repositorio.colmex.mx/concern/books/0v838347v?locale=es):
+If using *Pueblos de Indios* data, please cite [Tanck de Estrada (2005)](https://repositorio.colmex.mx/concern/books/0v838347v?locale=es):
 
 ```bibtex
-@book{TanckdeEstrada2021,
+@book{TanckdeEstrada2005,
   title={Atlas Ilustrado De Los Pueblos De Indios: Nueva España, 1800},
   author={Dorothy {Tanck de Estrada}},
-  year={2021},
+  year={2005},
   publisher={El Colegio de México},
   address={Mexico City},
   url={https://repositorio.colmex.mx/concern/books/0v838347v?locale=es}
