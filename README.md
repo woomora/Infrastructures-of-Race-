@@ -6,7 +6,7 @@ This is the replication package for *Infrastructures of Race? Colonial Indigenou
 
 To replicate the analysis in R:
 
-1. Download the data/derived files from the specified source.
+1. Download the data/derived files from the specified source. Add them to the master file. 
 2. Open `IoR_master_24.08.R` and run the script to reproduce each figure and table.
 
 **Notes:**  
