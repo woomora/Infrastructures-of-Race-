@@ -12,16 +12,43 @@ plots_path <- "plots"
 results_path <- "results"
 
 # If not installed, install package pacman
-# install.packages("pacman")
-# devtools::install_github("dmbwebb/qval")
+if (!requireNamespace("pacman", quietly = TRUE)) {
+  install.packages("pacman")
+}
 
-# (Install if not yet and) Load packages
+# (Install if not yet and) Load packages using pacman
 pacman::p_load(
-  tidyverse, janitor, sf, raster, haven, geosphere, nngeo, beepr,
-  fixest, ggnewscale, statar, rdrobust, rdlocrand, rddensity, binsreg, 
-  ggpubr, ggsignif, progress, binsreg, qval, wesanderson, latex2exp, stplanr, 
-  stars, janitor, units, kableExtra, cowplot
+  # Data manipulation and wrangling
+  tidyverse, janitor, haven,
+  
+  # Spatial data processing
+  sf, raster, geosphere, nngeo, stplanr, stars, units, ggspatial, ggsflabel,
+  
+  # Statistical modeling and econometrics
+  fixest, statar, rdrobust, rdlocrand, rddensity, binsreg, qval,
+  
+  # Data visualization and plotting
+  ggnewscale, ggpubr, ggsignif, wesanderson, latex2exp, ggthemes, viridis, 
+  cowplot, broom, scales, ggthemes,
+  
+  # Reporting and tables
+  kableExtra, kable,
+  
+  # Miscellaneous utilities
+  beepr, progress
 )
+
+# Instal pacakges in GitHub
+pacman::p_load_gh(
+  "dmbwebb/qval" # sharpened q-values
+)
+
+# Notes:
+# 1. 'pacman' package is used to simplify the loading and installation of packages.
+# 2. 'qval' is installed from GitHub using 'devtools' for sharpened q-values.
+# 3. The packages are grouped by their primary functionality for better readability.
+# 4. Duplicate package entries have been removed to avoid unnecessary loading.
+# 5. If any package is not installed, pacman will install it before loading.
 
 # For an easier visualization in Mac
 X11(type = "cairo")

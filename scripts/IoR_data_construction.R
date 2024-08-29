@@ -93,7 +93,7 @@ if (file.exists(processed_shapefile_path)) {
   pindios_cdmx <- 
     pindios_cdmx |> 
     st_join(
-      cdmx |> select(cve_mun, geometry) # Spatially join the CDMX geometry to the pueblos based on location
+      cdmx |> dplyr::select(cve_mun, geometry) # Spatially join the CDMX geometry to the pueblos based on location
     ) |> 
     filter(!is.na(cve_mun)) # Keep only those pueblos that fall within a municipality in CDMX (i.e., where the join was successful)
   
@@ -131,7 +131,7 @@ cdmx_historical_bound <-
   st_read(list_files[1]) |> 
   st_transform(st_crs(default_crs)) |> 
   janitor::clean_names() |> 
-  select(year, geometry)
+  dplyr::select(year, geometry)
 
 for (f in list_files[-1]) {
   
@@ -141,7 +141,7 @@ for (f in list_files[-1]) {
       st_read(f) |> 
         st_transform(st_crs(default_crs)) |> 
         janitor::clean_names() |> 
-        select(year, geometry) 
+        dplyr::select(year, geometry) 
     )
 }
 
@@ -169,11 +169,11 @@ if (file.exists(processed_shapefile_path)) {
     st_read("data/source/shapefiles/mzmge19gw/mzmge19gw.shp") |> # Load the blocks shapefile
     janitor::clean_names() # Clean column names to snake_case
   
-  # Filter blocks within CDMX and select relevant columns
+  # Filter blocks within CDMX and dplyr::select relevant columns
   cdmx_blocks_shp <- 
     blocks_shp |> 
     filter(cve_ent == "09") |> # Filter only the blocks in CDMX using 'cve_ent' code "09"
-    select(cvegeo:tipomza, area, perimeter, geometry) # Select relevant columns for further analysis
+    dplyr::select(cvegeo:tipomza, area, perimeter, geometry) # dplyr::select relevant columns for further analysis
   
   # Save the filtered CDMX blocks shapefile for future use
   cdmx_blocks_shp |> 
@@ -514,7 +514,7 @@ if (file.exists(processed_data_path)) {
     inv_rd |> 
     left_join(
       pindios_cdmx |> 
-        select(-cve_mun) |> # Remove 'cve_mun' column to avoid conflicts during join
+        dplyr::select(-cve_mun) |> # Remove 'cve_mun' column to avoid conflicts during join
         tibble() |> 
         rename(
           pueblo_lon = longitud, # Rename longitude column for Pueblo
@@ -619,7 +619,7 @@ if (file.exists(processed_data_path)) {
     crimes_rd |> 
     left_join(
       pindios_cdmx |> 
-        select(-cve_mun) |> # Remove 'cve_mun' column to avoid conflicts during join
+        dplyr::select(-cve_mun) |> # Remove 'cve_mun' column to avoid conflicts during join
         tibble() |> 
         rename(
           pueblo_lon = longitud, # Rename longitude column for Pueblo
@@ -760,7 +760,7 @@ if (file.exists(processed_data_path)) {
       ),
       cvegeo = str_c(cve_ent, cve_mun, cve_loc, ageb, manzana) # Concatenate to create Block ID
     ) |>
-    fastDummies::dummy_cols(select_columns = "type") |>
+    fastDummies::dummy_cols(dplyr::select_columns = "type") |>
     glimpse() # Quick inspection of the resulting data frame
   
   denue_rd <- denue
@@ -791,7 +791,7 @@ if (file.exists(processed_data_path)) {
     denue_rd |> 
     left_join(
       pindios_cdmx |> 
-        select(-cve_mun) |> # Remove 'cve_mun' column to avoid conflicts during join
+        dplyr::select(-cve_mun) |> # Remove 'cve_mun' column to avoid conflicts during join
         tibble() |> 
         rename(
           pueblo_lon = longitud, # Rename longitude column for Pueblo
@@ -834,7 +834,7 @@ cemabe <-
   filter(cve_ent == "09") |> 
   left_join(
     cdmx_blocks |> 
-      select(cvegeo, geometry, block_lon, block_lat, dist_n_pi, n_pi_index, solo_indigenas, t2b1)
+      dplyr::select(cvegeo, geometry, block_lon, block_lat, dist_n_pi, n_pi_index, solo_indigenas, t2b1)
   ) |> 
   mutate(
     public = if_else(public_private_string == "publico", 1, 0),
@@ -906,7 +906,7 @@ if (file.exists(processed_data_path)) {
   iglesias_cdmx <-
     iglesias_cdmx |>
     st_join(
-      cdmx |> select(geometry) |> mutate(within_cdmx = 1)
+      cdmx |> dplyr::select(geometry) |> mutate(within_cdmx = 1)
     ) |>
     filter(!is.na(within_cdmx))
   
@@ -974,7 +974,7 @@ if (file.exists(processed_data_path)) {
     mutate(
       vial_prin = 1 # Mark main vialidades
     ) |>
-    select(vial_prin) # Keep only the main vialidades identifier
+    dplyr::select(vial_prin) # Keep only the main vialidades identifier
   
   # Join all vialidades with main vialidades ----
   vial <-
@@ -1008,7 +1008,7 @@ if (file.exists(processed_data_path)) {
       pindios_cdmx |>
         tibble() |>
         rename(pueblo_geom = geometry) |>
-        select(pueblo_geom, n_pi_index), # Join with nearest Pueblo geometry
+        dplyr::select(pueblo_geom, n_pi_index), # Join with nearest Pueblo geometry
       by = "n_pi_index"
     ) |>
     mutate(
@@ -1130,7 +1130,7 @@ plot(clima)
 zonas_sism <-  
   st_read("data/source/rasters/zonas_sismicas/Zonificación Sísmica CDMX (GDF).kml") |>
   janitor::clean_names() |> 
-  select(name, geometry) |> 
+  dplyr::select(name, geometry) |> 
   rename(zona_sismica = name) |> 
   mutate(
     value = case_when(
@@ -1145,13 +1145,13 @@ zonas_sism <-
     zona_sismica = str_replace_all(zona_sismica, " ", "_")
   ) |> 
   fastDummies::dummy_cols(
-    select_columns = "zona_sismica"
+    dplyr::select_columns = "zona_sismica"
   ) |> 
   st_sf()
 
 zonas_sism_raster <- 
   zonas_sism |> 
-  dplyr::select(value, geometry) |> 
+  dplyr::dplyr::select(value, geometry) |> 
   stars::st_rasterize()
 
 plot(zonas_sism_raster)
