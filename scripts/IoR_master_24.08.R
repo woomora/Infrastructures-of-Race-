@@ -11,6 +11,8 @@ data_path <- "data"
 plots_path <- "plots"
 results_path <- "results"
 
+# Installation and Loading of Required Packages
+
 # If not installed, install package pacman
 if (!requireNamespace("pacman", quietly = TRUE)) {
   install.packages("pacman")
@@ -25,7 +27,7 @@ pacman::p_load(
   sf, raster, geosphere, nngeo, stplanr, stars, units, ggspatial, ggsflabel,
   
   # Statistical modeling and econometrics
-  fixest, statar, rdrobust, rdlocrand, rddensity, binsreg, qval,
+  fixest, statar, rdrobust, rdlocrand, rddensity, binsreg,
   
   # Data visualization and plotting
   ggnewscale, ggpubr, ggsignif, wesanderson, latex2exp, ggthemes, viridis, 
@@ -38,7 +40,7 @@ pacman::p_load(
   beepr, progress
 )
 
-# Instal pacakges in GitHub
+# Same for GitHub packages
 pacman::p_load_gh(
   "dmbwebb/qval" # sharpened q-values
 )
@@ -55,6 +57,7 @@ X11(type = "cairo")
 
 select <- dplyr::select # mask dplyr select function
 
+# Set ggplot theme
 theme_clean <- 
   ggthemes::theme_clean() +
   theme(

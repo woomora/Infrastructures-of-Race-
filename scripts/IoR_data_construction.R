@@ -93,7 +93,7 @@ if (file.exists(processed_shapefile_path)) {
   pindios_cdmx <- 
     pindios_cdmx |> 
     st_join(
-      cdmx |> dplyr::select(cve_mun, geometry) # Spatially join the CDMX geometry to the pueblos based on location
+      cdmx |> dplyr::dplyr::select(cve_mun, geometry) # Spatially join the CDMX geometry to the pueblos based on location
     ) |> 
     filter(!is.na(cve_mun)) # Keep only those pueblos that fall within a municipality in CDMX (i.e., where the join was successful)
   
