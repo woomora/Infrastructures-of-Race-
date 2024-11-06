@@ -10,11 +10,39 @@ This is the replication package for *Infrastructures of Race? Colonial Indigenou
 
 To replicate the analysis in R:
 
-1. Download the data files from [this link](https://www.dropbox.com/scl/fo/if8z28io6dtr6uz4ce3a6/AGTQNamHK1vuLIw_JcEs6Vo?rlkey=h1h3jj426dx83l828ci85a41s&dl=0). Add them to the master file. 
-2. Open `IoR_master_24.08.R` and run the script to reproduce each figure and table.
+1. Make sure you have at least R version 4.4.1 (see sessionInfo below). You can download the latest R version [here](https://cloud.r-project.org/bin/macosx/).
+2. For better and faster map visualization, use `X11(type = "cairo")`. Make sure you have XQuartz installed ([available here](https://www.xquartz.org/)), as it provides X11 support on macOS.
+3. Download the data files from [this link](https://www.dropbox.com/scl/fo/if8z28io6dtr6uz4ce3a6/AGTQNamHK1vuLIw_JcEs6Vo?rlkey=h1h3jj426dx83l828ci85a41s&dl=0). Add them to the master file. 
+4. Open `IoR_master.R` and run the script to reproduce each figure and table.
+
 
 **Notes:**  
-Ensure all necessary packages are installed using `pacman::pload`. For better and faster map visualization, use `X11(type = "cairo")`.
+
+Ensure all necessary packages are installed using `pacman::pload`. 
+
+```r
+# If not installed, install package pacman
+if (!requireNamespace("pacman", quietly = TRUE)) {
+  install.packages("pacman")
+}
+```
+
+Session Information:
+```r
+sessionInfo()
+# R version 4.4.1 (2024-06-14)
+# Platform: aarch64-apple-darwin20
+# Running under: macOS Sonoma 14.2.1
+#
+# Matrix products: default
+# BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+# LAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+#
+# locale:
+# [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+```
+
+---
 
 ## Citation
 
@@ -42,3 +70,7 @@ If using *Pueblos de Indios* data, please cite [Tanck de Estrada (2005)](https:/
   url={https://repositorio.colmex.mx/concern/books/0v838347v?locale=es}
 }
 ```
+
+---
+
+If you have any issues, please reach out to guillermo.woo-mora [at] psemail.eu. See also academic website for latest public email.
