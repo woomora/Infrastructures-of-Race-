@@ -50,11 +50,13 @@ Please cite accordingly if using any of the data:
 
 ```bibtex
 @article{BWdlR2024,
-  title={Infrastructures of Race? Colonial Indigenous Segregation and Contemporary Land Values},
-  author={Luis {Baldomero Quintana} and {L. Guillermo} {Woo-Mora} and Enrique {de la Rosa-Ramos}},
-  year={2024},
-  doi={https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4125065},
-  note={SSRN ID: 4125065}
+  title = {Infrastructures of race? Colonial indigenous segregation and contemporary land values},
+  author = {Luis {Baldomero-Quintana} and L. Guillermo {Woo-Mora} and Enrique {De la Rosa-Ramos}},
+  journal = {Regional Science and Urban Economics},
+  year = {2024},
+  volume = {In Press},
+  doi = {10.1016/j.regsciurbecon.2024.104065},
+  url = {https://doi.org/10.1016/j.regsciurbecon.2024.104065}
 }
 ```
 
