@@ -46,7 +46,7 @@ sessionInfo()
 
 ## Citation
 
-Please cite accordingly if using any of the data:
+Please cite [the paper](10.1016/j.regsciurbecon.2024.104065) accordingly if using any of the data:
 
 ```bibtex
 @article{BWdlR2024,
