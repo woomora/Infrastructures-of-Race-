@@ -1,6 +1,6 @@
 # Infrastructures of Race? Colonial Indigenous Segregation and Contemporary Land Values
 
-This is the replication package for *Infrastructures of Race? Colonial Indigenous Segregation and Contemporary Land Values* by [Baldomero-Quintana, Woo-Mora, and de la Rosa-Ramos (2024)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4125065).
+This is the replication package for *Infrastructures of Race? Colonial Indigenous Segregation and Contemporary Land Values* by [Baldomero-Quintana, Woo-Mora, and de la Rosa-Ramos (2024)](https://doi.org/10.1016/j.regsciurbecon.2024.104065).
 
 <div align="center">
   <img src="https://github.com/woomora/Infrastructures_of_Race/blob/main/plots/nonparam_reg.png" width="95%">
@@ -46,7 +46,7 @@ sessionInfo()
 
 ## Citation
 
-Please cite [the paper](10.1016/j.regsciurbecon.2024.104065) accordingly if using any of the data:
+Please cite accordingly if using any of the data:
 
 ```bibtex
 @article{BWdlR2024,
