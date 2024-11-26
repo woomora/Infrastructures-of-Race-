@@ -7,7 +7,7 @@ blocks_rd <-
   # Due to privacy rules, blocks with one or two inhabited dwellings
   # don't have socio-economic information
   filter(tvivhab > 2) |> 
-  select(
+  dplyr::select(
     cvegeo, cve_mun, area, 
     dist_n_pi, t2b1, solo_indigenas, dist_cbd, pueblo, block_lon, block_lat,
     pobtot, pobfem, rel_h_m, pob0_14, pob15_64, pob65_mas, p12ym_solt, prom_hnv, pnacoe, presoe15, pcatolica,

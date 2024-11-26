@@ -3,6 +3,8 @@
 # Define the file path for the output CSV file
 bootstrap_results_path <- str_c(results_path, "/bootstrapped_results.csv")
 
+nboots <- 1000
+
 # Run the first part of the script only if the file does not exist
 if (!file.exists(bootstrap_results_path)) {
   

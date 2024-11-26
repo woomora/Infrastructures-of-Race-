@@ -27,7 +27,7 @@ pacman::p_load(
   sf, raster, geosphere, nngeo, stplanr, stars, units, ggspatial, ggsflabel,
   
   # Statistical modeling and econometrics
-  fixest, statar, rdrobust, rdlocrand, rddensity, binsreg,
+  fixest, statar, rdrobust, rdlocrand, rddensity, binsreg, fastDummies,
   
   # Data visualization and plotting
   ggnewscale, ggpubr, ggsignif, wesanderson, latex2exp, ggthemes, viridis, 
@@ -144,7 +144,7 @@ source("scripts/scripts_results/IoR_Fig3.R")
 # saved as "nonparam_reg.png"
 
 # The remaining figures are not included in the paper, 
-# but contain the estiamtes reported there
+# but contain the estimates reported there
 
 # Figure 4: Donut RDD plot and estimates ----
 source("scripts/scripts_results/IoR_Fig4.R")

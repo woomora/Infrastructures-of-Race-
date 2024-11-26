@@ -118,8 +118,8 @@ if (!file.exists(loc_fund_balance_path)) {
         foo2_rd_ind$lat
       )
     
-    RDD <- rdrobust(y, x, covs = covs, c = -c) 
-    RDD2 <- rdrobust(y, x, covs = covs, c = -c, p = 2)
+    RDD <- rdrobust(y, x, covs = covs, c = -cutoff) 
+    RDD2 <- rdrobust(y, x, covs = covs, c = -cutoff, p = 2)
     
     loc_fund_balance <-
       loc_fund_balance |>
@@ -148,8 +148,8 @@ if (!file.exists(loc_fund_balance_path)) {
         foo2_rd_mix$lat
       )
     
-    RDD <- rdrobust(y, x, covs = covs, c = -c)
-    RDD2 <- rdrobust(y, x, covs = covs, c = -c, p = 2)
+    RDD <- rdrobust(y, x, covs = covs, c = -cutoff)
+    RDD2 <- rdrobust(y, x, covs = covs, c = -cutoff, p = 2)
     
     loc_fund_balance <-
       loc_fund_balance |>

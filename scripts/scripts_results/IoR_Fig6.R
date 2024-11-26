@@ -3,16 +3,13 @@
 # Filter 1830 Colonial traza
 cdmx_historical_1830 <- 
   cdmx_historical_bound |> 
-  filter(year == 1830) |> 
-  mutate(
-    traza_1830 
-  )
+  filter(year == 1830)
 
 # Read amenity shapefile
 alumbrado <- 
   st_read("data/source/historical_maps/alumbrado_publico_shapefiles/alumbrado_publico.shp") |> 
   st_transform(default_crs) |> 
-  select(-Id) |> 
+  dplyr::select(-Id) |> 
   mutate(
     type = "Street lighting",
     year = 1932

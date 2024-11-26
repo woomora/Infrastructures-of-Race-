@@ -383,8 +383,8 @@ data_points |>
   geom_vline(xintercept = cutoff - donut, linetype = "dotted") +
   geom_vline(xintercept = cutoff, lwd = .25) +
   geom_vline(xintercept = cutoff + donut, linetype = "dotted") +
-  scale_y_continuous(breaks = seq(0, 3500, by = 100)) +
-  scale_x_continuous(breaks = seq(0, 1500, by = 100)) +
+  scale_y_continuous(breaks = seq(0, 3500, by = 250)) +
+  scale_x_continuous(breaks = seq(0, 1500, by = 250)) +
   scale_color_manual(values = c(palette2, "grey")) +
   labs(x = "Dist. from the center of the nearest pueblo (m)", y = expression("Land price (MXN per"~m^2~")"), color = "") +
   theme(
@@ -401,10 +401,11 @@ data_points |>
     x = cutoff,
     y = Inf, vjust = -1, size = 2.5
   ) +
-  facet_wrap(~group, scales = "free_y") 
+  facet_wrap(~group) 
 
 ggsave(
-  str_c(plots_path, "/nonparam_reg_het.png")
+  str_c(plots_path, "/nonparam_reg_het.png"),
+  height = 5.75, width = 12.6
 )
 
 #
