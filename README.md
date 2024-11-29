@@ -3,7 +3,7 @@
 This is the replication package for *Infrastructures of Race? Colonial Indigenous Segregation and Contemporary Land Values* by [Baldomero-Quintana, Woo-Mora, and de la Rosa-Ramos (2025)](https://www.sciencedirect.com/science/article/abs/pii/S0166046224000966).
 
 <div align="center">
-  <img src="https://github.com/woomora/Infrastructures_of_Race/blob/main/plots/nonparam_reg.png" width="95%">
+  <img src="https://github.com/woomora/Infrastructures_of_Race/blob/main/results/Fig3/nonparam_reg.png" width="95%">
 </div>
 
 ## Instructions
